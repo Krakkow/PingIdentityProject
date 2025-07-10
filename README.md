@@ -14,7 +14,7 @@
 ## Author
 
 - **Or Kowalsky**
-- Assignment for Mend.io QA Automation Engineer position
+- Assignment for PingIdentity QA Automation Engineer position
 
 ---
 
