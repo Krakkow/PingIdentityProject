@@ -1,4 +1,4 @@
-package com.mendio.githubtests.utils;
+package com.pingIdentity.pingIdentityTests.utils;
 
 import java.time.Duration;
 import java.util.List;

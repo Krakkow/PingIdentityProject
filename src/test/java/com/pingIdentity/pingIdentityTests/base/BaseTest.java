@@ -1,4 +1,4 @@
-package com.mendio.githubtests.base;
+package com.pingIdentity.pingIdentityTests.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,7 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 
-@Listeners(com.mendio.githubtests.reports.TestListener.class)
+@Listeners(com.pingIdentity.pingIdentityTests.reports.TestListener.class)
 public abstract class BaseTest {
 
     protected WebDriver driver;
