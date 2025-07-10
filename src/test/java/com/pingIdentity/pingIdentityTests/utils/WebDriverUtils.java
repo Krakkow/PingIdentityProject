@@ -19,6 +19,14 @@ public class WebDriverUtils {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
+    public void goToPage(String url){
+        if (url != null && !url.isEmpty()) {
+            driver.get(url);
+        }else{
+            throw new IllegalArgumentException("URL must not be null or empty");
+        }
+    }
+
     public WebElement waitUntilVisible(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
