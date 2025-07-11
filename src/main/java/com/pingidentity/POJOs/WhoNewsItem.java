@@ -1,4 +1,4 @@
-package com.pingIdentity.pingIdentityTests.POJOs;
+package com.pingidentity.POJOs;
 
 import java.time.LocalDate;
 

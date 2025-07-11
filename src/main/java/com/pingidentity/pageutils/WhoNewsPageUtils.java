@@ -1,4 +1,4 @@
-package com.pingIdentity.pingIdentityTests.pageUtils;
+package com.pingidentity.pageutils;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -7,18 +7,18 @@ import java.util.List;
 
 import org.openqa.selenium.WebElement;
 
-import com.pingIdentity.pingIdentityTests.POJOs.WhoNewsItem;
-import com.pingIdentity.pingIdentityTests.pages.WhoNewsPageElements;
-import com.pingIdentity.pingIdentityTests.utils.WebDriverUtils;
+import com.pingidentity.POJOs.WhoNewsItem;
+import com.pingidentity.pages.WhoNewsPageElements;
+import com.pingidentity.utils.WebDriverCommonFunc;
 
 public class WhoNewsPageUtils {
 
-    private final WebDriverUtils utils;
+    private final WebDriverCommonFunc utils;
 
     private static final String ORIGIN = "https://www.who.int";
-    private static final DateTimeFormatter WHO_DATE_FORMATTER = DateTimeFormatter.ofPattern("d MMMM yyyy");
+    private static final DateTimeFormatter WHO_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MMMM/yyyy");
 
-    public WhoNewsPageUtils(WebDriverUtils utils) {
+    public WhoNewsPageUtils(WebDriverCommonFunc utils) {
         this.utils = utils;
     }
 
@@ -37,9 +37,7 @@ public class WhoNewsPageUtils {
             if (item != null) {
                 newsList.add(item);
                 count++;
-
             }
-
         }
         return newsList;
     }

@@ -1,4 +1,4 @@
-package com.pingIdentity.pingIdentityTests.utils;
+package com.pingidentity.utils;
 
 import java.time.Duration;
 import java.util.List;
@@ -9,20 +9,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WebDriverUtils {
+public class WebDriverCommonFunc {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    
-    public WebDriverUtils(WebDriver driver) {
+
+    public WebDriverCommonFunc(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    public void goToPage(String url){
+    public void goToPage(String url) {
         if (url != null && !url.isEmpty()) {
             driver.get(url);
-        }else{
+        } else {
             throw new IllegalArgumentException("URL must not be null or empty");
         }
     }
@@ -39,7 +39,7 @@ public class WebDriverUtils {
         return driver.findElement(locator);
     }
 
-    public boolean doesElementExist(By locator){
+    public boolean doesElementExist(By locator) {
         return !driver.findElements(locator).isEmpty();
     }
 
@@ -75,5 +75,5 @@ public class WebDriverUtils {
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
-    
+
 }
