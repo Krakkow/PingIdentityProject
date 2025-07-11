@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 
 public class WhoNewsPageElements {
 
+        // Private constructor to prevent instantiation
+        private WhoNewsPageElements() {
+        }
+
         public static final String EXPECTED_TAB_TITLE = "News";
         public static final String EXPECTED_URL = "https://www.who.int/news";
 
