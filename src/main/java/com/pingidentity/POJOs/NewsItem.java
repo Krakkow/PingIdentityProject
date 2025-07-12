@@ -2,14 +2,14 @@ package com.pingidentity.POJOs;
 
 import java.time.LocalDate;
 
-public class WhoNewsItem {
+public class NewsItem {
     private String origin;
     private LocalDate publishedDate;
     private String newsType;
     private String title;
     private String url;
 
-    public WhoNewsItem(String origin, LocalDate publishedDate, String newsType, String title, String url) {
+    public NewsItem(String origin, LocalDate publishedDate, String newsType, String title, String url) {
         this.origin = origin;
         this.publishedDate = publishedDate;
         this.newsType = newsType;
