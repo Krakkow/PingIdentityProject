@@ -43,6 +43,6 @@ public class AppleNewsRoomPageUtils {
                 AppleNewsRoomPageElements.ARTICLE_DATE,
                 "MMMM d, yyyy",
                 "https://www.apple.com/newsroom/",
-                "Apple News");
+                "N/A");
     }
 }

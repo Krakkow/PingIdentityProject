@@ -18,6 +18,8 @@ public class WebDriverCommonFunc {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private String titleAttribute = "aria-label";
+    private String hrefAttribute = "href";
 
     public WebDriverCommonFunc(WebDriver driver) {
         this.driver = driver;
@@ -122,8 +124,8 @@ public class WebDriverCommonFunc {
             WebElement anchor = article.findElement(titleLocator);
             WebElement dateElement = article.findElement(dateLocator);
 
-            String title = anchor.getAttribute("aria-label");
-            String url = anchor.getAttribute("href").trim();
+            String title = anchor.getAttribute(titleAttribute);
+            String url = anchor.getAttribute(hrefAttribute).trim();
             String rawDate = dateElement.getText().trim();
             LocalDate publishedDate = LocalDate.parse(rawDate, formatter);
 
@@ -182,8 +184,8 @@ public class WebDriverCommonFunc {
             WebElement anchor = article.findElement(titleLocator);
             WebElement dateElement = article.findElement(dateLocator);
 
-            String title = isTitleFromAriaLabel ? anchor.getAttribute("aria-label") : anchor.getText().trim();
-            String url = anchor.getAttribute("href").trim();
+            String title = isTitleFromAriaLabel ? anchor.getAttribute(titleAttribute) : anchor.getText().trim();
+            String url = anchor.getAttribute(hrefAttribute).trim();
             String rawDate = dateElement.getText().trim();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
             LocalDate publishedDate = LocalDate.parse(rawDate, formatter);
@@ -221,8 +223,8 @@ public class WebDriverCommonFunc {
                 title = titleElement.getText().trim();
             } else {
                 WebElement anchor = article.findElement(By.tagName("a"));
-                url = anchor.getAttribute("href").trim();
-                title = anchor.getAttribute("aria-label");
+                url = anchor.getAttribute(hrefAttribute).trim();
+                title = anchor.getAttribute(titleAttribute);
             }
 
             return new NewsItem(origin, publishedDate, type, title, url);

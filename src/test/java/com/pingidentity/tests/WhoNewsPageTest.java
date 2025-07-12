@@ -1,11 +1,13 @@
 package com.pingidentity.tests;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.pingidentity.POJOs.NewsItem;
+import com.pingidentity.pageutils.AppleNewsRoomPageUtils;
 import com.pingidentity.pageutils.WhoNewsPageUtils;
 import com.pingidentity.utils.LogicFuncs;
 import com.pingidentity.utils.WebDriverCommonFunc;
@@ -72,6 +74,29 @@ public class WhoNewsPageTest extends BaseTest {
         }
 
         softAssert.assertAll();
+    }
+
+    @Test
+    public void exportCombinedNewsToFile() {
+        WebDriverCommonFunc utils = new WebDriverCommonFunc(driver);
+
+        // WHO News
+        utils.goToPage("https://www.who.int/news-room/releases");
+        WhoNewsPageUtils whoUtils = new WhoNewsPageUtils(utils);
+        List<NewsItem> whoNews = whoUtils.getArticlesByType(5, "Joint News Release");
+
+        // Apple News
+        utils.goToPage("https://www.apple.com/newsroom/");
+        AppleNewsRoomPageUtils appleUtils = new AppleNewsRoomPageUtils(utils);
+        List<NewsItem> appleNews = appleUtils.getLatestArticles(5);
+
+        // Combine
+        List<NewsItem> combined = new ArrayList<>();
+        combined.addAll(whoNews);
+        combined.addAll(appleNews);
+
+        // Export to file
+        LogicFuncs.exportNewsToFile(combined, "latest_news.txt");
     }
 
 }
