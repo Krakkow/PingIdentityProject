@@ -22,7 +22,8 @@ public class WhoNewsPageUtils {
                 WhoNewsPageElements.NEWS_TYPE_DROPDOWN,
                 WhoNewsPageElements.NEWS_TYPE_DROPDOWN_OPTIONS,
                 WhoNewsPageElements.SELECTED_NEWS_TYPE,
-                expectedType);
+                expectedType,
+                WhoNewsPageElements.NEWS_ARTICLE_BLOCKS);
 
         List<WebElement> articleBlocks = utils.findElements(WhoNewsPageElements.NEWS_ARTICLE_BLOCKS);
         List<NewsItem> newsList = new ArrayList<>();
@@ -47,8 +48,8 @@ public class WhoNewsPageUtils {
                 article,
                 WhoNewsPageElements.ARTICLE_TITLE,
                 WhoNewsPageElements.ARTICLE_DATE,
-                "dd MMMM yyyy",
-                "https://www.who.int",
+                "d MMMM yyyy",
+                "https://www.who.int/news",
                 type,
                 true // WHO uses aria-label
         );
