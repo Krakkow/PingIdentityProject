@@ -54,6 +54,17 @@
 
 ---
 
+### 🦠 WHO COVID-19 Dashboard – Positivity Rate Validation
+
+- Navigates to Table 1.1 and Table 1.3
+- Verifies that the latest reporting date is the same in both tables
+- Extracts and compares positivity rates for each WHO region
+
+> ⚠ **Note:** The test comparing positivity rates across tables may occasionally fail.  
+> This is expected, as the WHO Dashboard may show slightly different values between Table 1.1 and Table 1.3 depending on update timing or internal calculation differences.
+
+---
+
 ## 📤 Data Export Feature
 
 - Merges WHO and Apple news articles into a combined list
