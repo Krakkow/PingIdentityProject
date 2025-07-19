@@ -111,6 +111,7 @@ Test results will appear in the terminal and also in the `target/surefire-report
 
   - `WhoNewsPageTests.java`
   - `AppleNewsRoomPageTests.java`
+  - `WhoCovidSummaryPageTest.java`
 
 ---
 
